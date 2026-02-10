@@ -59,10 +59,15 @@ body {
 
 /* Hero Section */
 .hero {
-    margin-top: 40px;
+    margin-top: 10px;
+    /* Reduced margin */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    /* Center content vertically if possible */
+    min-height: 40vh;
+    /* Ensure some minimum height */
 }
 
 .teddy-container {
@@ -100,18 +105,22 @@ body {
 
 .title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    /* Reduced base size */
+    margin-bottom: 5px;
+    /* Reduced margin */
     color: var(--primary-color);
-    min-height: 3.5rem;
-    /* Prevent layout shift */
+    min-height: 2.5rem;
+    padding: 0 10px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.8;
-    margin-bottom: 30px;
-    min-height: 1.5rem;
+    margin-bottom: 15px;
+    /* Reduced margin */
+    min-height: 1.2rem;
+    padding: 0 10px;
 }
 
 /* Message Card */
@@ -139,8 +148,10 @@ body {
 .main-btn {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    /* Slightly reduced padding */
+    font-size: 1.1rem;
+    /* Slightly reduced font */
     color: white;
     border-radius: 50px;
     cursor: pointer;
@@ -342,15 +353,62 @@ footer {
 
 /* Responsive */
 @media (max-width: 480px) {
-    .title {
-        font-size: 2rem;
+    .container {
+        padding: 10px;
+        /* Reduced container padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100vh;
+        /* Occupy full height */
     }
 
-    .handwritten-text {
-        font-size: 1.5rem;
+    .hero {
+        margin-top: 50px;
+        /* Account for top buttons */
+        min-height: auto;
+        flex: 1;
+        justify-content: center;
     }
 
     .teddy-img {
-        width: 200px;
+        width: 180px;
+        /* Smaller image */
+        height: 180px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .message-card {
+        padding: 15px;
+        /* Compact card */
+        margin-bottom: 15px;
+        flex: 0 0 auto;
+        /* Don't stretch */
+    }
+
+    .handwritten-text {
+        font-size: 1.3rem;
+        /* Smaller text */
+        line-height: 1.4;
+    }
+
+    .surprise-section {
+        margin-bottom: 20px;
+        flex: 0 0 auto;
+    }
+
+    footer {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 0.8rem;
     }
 }

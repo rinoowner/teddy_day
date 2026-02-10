@@ -173,21 +173,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function moveNoButton() {
-        const modalContent = document.querySelector('.modal-content');
-
         // Ensure accurate dimensions (using clientWidth/Height for padding box)
-        const containerWidth = modalContent.clientWidth;
-        const containerHeight = modalContent.clientHeight;
+        const containerWidth = window.innerWidth;
+        const containerHeight = window.innerHeight;
         const btnWidth = noBtn.offsetWidth;
         const btnHeight = noBtn.offsetHeight;
 
-        // Apply absolute positioning if not already set
-        if (noBtn.style.position !== 'absolute') {
-            noBtn.style.position = 'absolute';
+        // Apply fixed positioning to move relative to viewport
+        if (noBtn.style.position !== 'fixed') {
+            noBtn.style.position = 'fixed';
+            noBtn.style.zIndex = '1000'; // Ensure it stays on top
         }
 
-        // Calculate safe boundaries (keep inside padding essentially)
-        // Padding is 40px in CSS. Let's keep it safe.
+        // Calculate safe boundaries
         const padding = 20;
         const maxLeft = containerWidth - btnWidth - padding;
         const maxTop = containerHeight - btnHeight - padding;
