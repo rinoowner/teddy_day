@@ -249,6 +249,48 @@ body {
     color: var(--primary-color);
 }
 
+/* Modal Buttons */
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    /* Container for relative positioning context if needed */
+}
+
+.modal-btn {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yes-btn {
+    background: #4caf50;
+    /* Green for Yes */
+    color: white;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.6);
+}
+
+.no-btn {
+    background: #ff5252;
+    /* Red for No */
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 82, 82, 0.4);
+    position: relative;
+    /* Allow movement */
+}
+
 /* Animations */
 .floating-heart {
     position: fixed;

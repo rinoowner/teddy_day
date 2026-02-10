@@ -141,4 +141,61 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
         themeToggle.innerHTML = isDark ? "☀️" : "🌙";
     });
+
+    // Yes/No Button Logic
+    const yesBtn = document.getElementById("yes-btn");
+    const noBtn = document.getElementById("no-btn");
+
+    yesBtn.addEventListener("click", () => {
+        // WhatsApp Redirect
+        const phoneNumber = "919694707873";
+        const message = "Yes I will be your forever Valentine! 🥹❤️";
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+
+        // Optional: Close modal after clicking yes (or show a celebration)
+        modal.style.display = "none";
+        alert("Yay! ❤️ See you on WhatsApp!");
+    });
+
+    // Runaway No Button
+    // Move on hover (desktop)
+    noBtn.addEventListener("mouseover", moveNoButton);
+    // Move on touch (mobile) - use touchstart to move before tap
+    noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // Prevent standard click/focus
+        moveNoButton();
+    });
+    // Fallback for click (if they manage to click it)
+    noBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        moveNoButton();
+    });
+
+    function moveNoButton() {
+        const modalContent = document.querySelector('.modal-content');
+
+        // Ensure accurate dimensions (using clientWidth/Height for padding box)
+        const containerWidth = modalContent.clientWidth;
+        const containerHeight = modalContent.clientHeight;
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+
+        // Apply absolute positioning if not already set
+        if (noBtn.style.position !== 'absolute') {
+            noBtn.style.position = 'absolute';
+        }
+
+        // Calculate safe boundaries (keep inside padding essentially)
+        // Padding is 40px in CSS. Let's keep it safe.
+        const padding = 20;
+        const maxLeft = containerWidth - btnWidth - padding;
+        const maxTop = containerHeight - btnHeight - padding;
+
+        const randomLeft = Math.max(padding, Math.random() * maxLeft);
+        const randomTop = Math.max(padding, Math.random() * maxTop);
+
+        noBtn.style.left = `${randomLeft}px`;
+        noBtn.style.top = `${randomTop}px`;
+    }
 });
