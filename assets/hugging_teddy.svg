@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220">
+  <defs>
+    <linearGradient id="bodyGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a373;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ac7e54;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4d6d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c9184a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="140" rx="55" ry="65" fill="url(#bodyGradient2)" />
+  <ellipse cx="100" cy="140" rx="35" ry="45" fill="#faedcd" />
+
+  <!-- Legs -->
+  <ellipse cx="70" cy="190" rx="20" ry="25" fill="url(#bodyGradient2)" />
+  <ellipse cx="130" cy="190" rx="20" ry="25" fill="url(#bodyGradient2)" />
+  <circle cx="70" cy="195" r="10" fill="#faedcd" />
+  <circle cx="130" cy="195" r="10" fill="#faedcd" />
+
+  <!-- Head -->
+  <circle cx="100" cy="70" r="50" fill="url(#bodyGradient2)" />
+
+  <!-- Ears -->
+  <circle cx="60" cy="40" r="18" fill="url(#bodyGradient2)" />
+  <circle cx="60" cy="40" r="10" fill="#6f4e37" />
+  <circle cx="140" cy="40" r="18" fill="url(#bodyGradient2)" />
+  <circle cx="140" cy="40" r="10" fill="#6f4e37" />
+
+  <!-- Face -->
+  <ellipse cx="100" cy="80" rx="22" ry="18" fill="#faedcd" />
+  <circle cx="100" cy="75" r="6" fill="#6f4e37" />
+  <path d="M94 85 Q100 90 106 85" stroke="#6f4e37" stroke-width="2" fill="none" />
+
+  <!-- Eyes (Happy/Closed) -->
+  <path d="M80 65 Q85 60 90 65" stroke="black" stroke-width="2" fill="none" />
+  <path d="M110 65 Q115 60 120 65" stroke="black" stroke-width="2" fill="none" />
+
+  <!-- Blush -->
+  <circle cx="80" cy="80" r="5" fill="#ffadad" opacity="0.6" />
+  <circle cx="120" cy="80" r="5" fill="#ffadad" opacity="0.6" />
+
+  <!-- Big Heart (Beating Animation) -->
+  <path d="M100 170 C 20 100, 70 50, 100 90 C 130 50, 180 100, 100 170" fill="url(#heartGradient)">
+    <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="0.8s" repeatCount="indefinite" additive="sum" transform-origin="100 110" />
+  </path>
+
+  <!-- Arms Hugging the Heart -->
+  <ellipse cx="60" cy="130" rx="15" ry="35" fill="url(#bodyGradient2)" transform="rotate(30 60 130)" />
+  <ellipse cx="140" cy="130" rx="15" ry="35" fill="url(#bodyGradient2)" transform="rotate(-30 140 130)" />
+
+</svg>
